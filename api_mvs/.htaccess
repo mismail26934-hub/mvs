@@ -1,0 +1,10 @@
+<Files ".env">
+    Require all denied
+</Files>
+
+RewriteEngine On
+RewriteBase /api_mvs/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?route=$1 [QSA,L]
